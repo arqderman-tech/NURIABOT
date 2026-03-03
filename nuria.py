@@ -37,34 +37,51 @@ def obtener_dolar():
     except Exception:
         return 1.0
 
-def obtener_precios(url, categoria_default):
+def scrape_pagina(url):
+    """Extrae productos de una URL (una página)."""
+    time.sleep(random.uniform(1, 2))
+    r = requests.get(url, headers=HEADERS, timeout=20)
+    soup = BeautifulSoup(r.content, "html.parser")
+    items = soup.find_all("li", class_="product")
+    # Detectar si hay pagina siguiente
+    next_page = None
+    nav = soup.select_one("a.next.page-numbers")
+    if nav:
+        next_page = nav["href"]
+    return items, next_page
+
+def obtener_precios(url_base, categoria_default):
     productos = []
-    try:
-        time.sleep(random.uniform(1, 2))
-        r = requests.get(url, headers=HEADERS, timeout=20)
-        soup = BeautifulSoup(r.content, "html.parser")
-        items = soup.find_all("li", class_="product")
-        print("    Items encontrados: " + str(len(items)))
-        for item in items:
-            titulo_tag = item.find("h4", class_="card-title")
-            if not titulo_tag or not titulo_tag.a:
-                continue
-            nombre = titulo_tag.a.get_text(strip=True)
-            if nombre.upper() in [p.upper() for p in PRODUCTOS_A_EXCLUIR]:
-                continue
-            cat = PRODUCTOS_A_RECLASIFICAR.get(nombre.upper(), categoria_default)
-            precio_tag = item.find("span", class_="woocommerce-Price-amount")
-            if not precio_tag:
-                continue
-            txt = re.sub(r"[^\d,\.]", "", precio_tag.get_text(strip=True))
-            try:
-                precio = float(txt.replace(".", "").replace(",", ".")) if "," in txt else float(txt.replace(",", ""))
-            except Exception:
-                continue
-            if precio > 0:
-                productos.append({"nombre": nombre, "categoria": cat, "precio_ars": precio})
-    except Exception as e:
-        print("Error: " + str(e))
+    url_actual = url_base
+    pagina = 1
+    while url_actual:
+        try:
+            print("    Pagina " + str(pagina) + ": " + url_actual)
+            items, next_page = scrape_pagina(url_actual)
+            print("    Items encontrados: " + str(len(items)))
+            for item in items:
+                titulo_tag = item.find("h4", class_="card-title")
+                if not titulo_tag or not titulo_tag.a:
+                    continue
+                nombre = titulo_tag.a.get_text(strip=True)
+                if nombre.upper() in [p.upper() for p in PRODUCTOS_A_EXCLUIR]:
+                    continue
+                cat = PRODUCTOS_A_RECLASIFICAR.get(nombre.upper(), categoria_default)
+                precio_tag = item.find("span", class_="woocommerce-Price-amount")
+                if not precio_tag:
+                    continue
+                txt = re.sub(r"[^\d,\.]", "", precio_tag.get_text(strip=True))
+                try:
+                    precio = float(txt.replace(".", "").replace(",", ".")) if "," in txt else float(txt.replace(",", ""))
+                except Exception:
+                    continue
+                if precio > 0:
+                    productos.append({"nombre": nombre, "categoria": cat, "precio_ars": precio})
+            url_actual = next_page
+            pagina += 1
+        except Exception as e:
+            print("    Error pagina " + str(pagina) + ": " + str(e))
+            break
     return productos
 
 def main():
