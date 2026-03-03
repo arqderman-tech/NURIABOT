@@ -1,0 +1,24 @@
+{
+  "variacion_dia": null,
+  "variacion_mes": null,
+  "total_productos": 24,
+  "categorias": {
+    "Tortas y Postres": {
+      "total": 6,
+      "variacion_dia": null
+    },
+    "Tortas Individuales": {
+      "total": 6,
+      "variacion_dia": null
+    },
+    "Pasteleria y Panaderia": {
+      "total": 8,
+      "variacion_dia": null
+    },
+    "Salados": {
+      "total": 4,
+      "variacion_dia": null
+    }
+  },
+  "fecha_actualizacion": "2026-03-03"
+}
