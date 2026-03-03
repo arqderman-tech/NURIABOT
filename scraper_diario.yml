@@ -1,0 +1,28 @@
+name: NURIABOT – Scraper Diario
+
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests beautifulsoup4 pandas openpyxl matplotlib seaborn
+      - run: python nuria.py
+      - run: python analizar_precios.py
+      - run: python generar_web.py
+      - run: |
+          git config user.name  "nuriabot"
+          git config user.email "bot@nuriabot.github.io"
+          git add data/ docs/ nuria_precios.csv || true
+          git diff --cached --quiet || git commit -m "🎂 Update $(date +'%Y-%m-%d')"
+          git push
