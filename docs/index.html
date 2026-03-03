@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nuria Price Tracker</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap');
+:root{--bg:#0a0c12;--surface:#13161f;--surface2:#1a1d27;--border:#252836;--accent:#ec4899;--text:#e2e8f0;--muted:#64748b;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;}
+header{background:var(--surface);border-bottom:1px solid var(--border);padding:1.25rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+header h1{font-family:'IBM Plex Mono',monospace;font-size:1.25rem;color:var(--accent);}
+.tagline{font-size:0.78rem;color:var(--muted);margin-top:0.2rem;}
+.container{max-width:1200px;margin:0 auto;padding:1.5rem 1rem 3rem;}
+.hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0.75rem;margin-bottom:1.5rem;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.2rem;text-align:center;}
+.stat-card .label{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.4rem;}
+.stat-card .value{font-family:'IBM Plex Mono',monospace;font-size:1.8rem;font-weight:700;}
+.stat-card .sub{font-size:0.75rem;color:var(--muted);margin-top:0.25rem;}
+.section{margin-bottom:2rem;}
+.section-title{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:0.85rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);}
+.chart-wrap{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1.25rem;height:280px;}
+.period-tabs{display:flex;gap:0.4rem;margin-bottom:1rem;}
+.period-tab{padding:0.3rem 0.7rem;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;font-size:0.75rem;font-family:'IBM Plex Mono',monospace;}
+.period-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+table{width:100%;border-collapse:collapse;font-size:0.85rem;}
+th{background:var(--surface);padding:0.6rem 0.9rem;text-align:left;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);border-bottom:1px solid var(--border);}
+td{padding:0.55rem 0.9rem;border-bottom:1px solid var(--border);}
+tr:hover td{background:rgba(255,255,255,0.02);}
+@media(max-width:700px){.grid2{grid-template-columns:1fr;}}
+footer{text-align:center;padding:2rem;color:var(--muted);font-size:0.72rem;border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>🎂 NURIA PRICE TRACKER</h1>
+    <div class="tagline">Pastelería y Confitería Nuria — Rosario</div>
+  </div>
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--muted)">Actualizado: 03/03/2026 13:57</div>
+</header>
+<div class="container">
+  <div class="hero" style="margin-top:1rem">
+    <div class="stat-card">
+      <div class="label">Variación Hoy</div>
+      <div class="value" style="color:#888">—</div>
+      <div class="sub">0 productos</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">Variación 30 días</div>
+      <div class="value" style="color:#888">—</div>
+    </div>
+    
+  </div>
+
+  <div class="section">
+    <div class="section-title">📈 Evolución de precios</div>
+    <div class="period-tabs" id="ptabs">
+      <button class="period-tab active" onclick="cambiarPeriodo('7d',this)">7d</button>
+      <button class="period-tab" onclick="cambiarPeriodo('30d',this)">30d</button>
+      <button class="period-tab" onclick="cambiarPeriodo('6m',this)">6m</button>
+    </div>
+    <div class="chart-wrap"><canvas id="chartMain"></canvas></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">📊 Por categoría</div>
+    <div class="chart-wrap"><canvas id="chartCats"></canvas></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">🏆 Rankings</div>
+    <div class="period-tabs" id="rtabs">
+      <button class="period-tab active" onclick="cambiarRanking('dia',this)">Hoy</button>
+      <button class="period-tab" onclick="cambiarRanking('7d',this)">7 días</button>
+      <button class="period-tab" onclick="cambiarRanking('mes',this)">30 días</button>
+    </div>
+    <div class="grid2" style="margin-top:1rem">
+      <div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.6rem">🔥 Más subieron</div>
+        <table><thead><tr><th>#</th><th>Producto</th><th>Categoría</th><th>Var%</th><th>Precio</th></tr></thead><tbody id="rank-sube"></tbody></table>
+      </div>
+      <div>
+        <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.6rem">📉 Más bajaron</div>
+        <table><thead><tr><th>#</th><th>Producto</th><th>Categoría</th><th>Var%</th><th>Precio</th></tr></thead><tbody id="rank-baja"></tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>Datos de nuria.com.ar · NURIABOT · Actualización diaria 12:00 ART via GitHub Actions</footer>
+
+<script>
+const G = {};
+const RANK = {dia:[],d7:[],mes:[]};
+const CAT_COLORS = {"Tortas Individuales":"#ec4899","Tortas y Postres":"#f43f5e","Pasteleria y Panaderia":"#f59e0b","Salados":"#10b981","Otros":"#6366f1"};
+let chartMain, chartCats;
+
+function chartOpts(legend){
+  return{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:legend,labels:{color:'#94a3b8',font:{size:11}}}},
+    scales:{x:{ticks:{color:'#64748b',maxTicksLimit:8},grid:{color:'#1e2130'}},
+      y:{ticks:{color:'#64748b',callback:v=>(v>0?'+':'')+v.toFixed(1)+'%'},grid:{color:'#1e2130'},
+        afterDataLimits:ax=>{if(ax.min>0)ax.min=0;if(ax.max<0)ax.max=0;}}}
+  };
+}
+
+function renderMain(p){
+  const d=G[p]?.total||[];
+  if(chartMain)chartMain.destroy();
+  chartMain=new Chart(document.getElementById('chartMain').getContext('2d'),{
+    type:'line',
+    data:{labels:d.map(x=>x.fecha),datasets:[{label:'Total',data:d.map(x=>x.pct),borderColor:'#ec4899',backgroundColor:'rgba(236,72,153,0.06)',borderWidth:2,pointRadius:d.length>60?0:2,tension:0.3,fill:true}]},
+    options:chartOpts(false)
+  });
+}
+
+function renderCats(p){
+  const pc=G[p]?.por_categoria||{};
+  if(chartCats)chartCats.destroy();
+  const datasets=Object.entries(pc).map(([cat,datos])=>({label:cat,data:datos.map(d=>d.pct),borderColor:CAT_COLORS[cat]||'#888',backgroundColor:'transparent',borderWidth:2,pointRadius:datos.length>60?0:2,tension:0.3}));
+  const labels=[...new Set(Object.values(pc).flat().map(d=>d.fecha))].sort();
+  chartCats=new Chart(document.getElementById('chartCats').getContext('2d'),{
+    type:'line',data:{labels,datasets},options:chartOpts(true)
+  });
+}
+
+function cambiarPeriodo(p,btn){
+  document.querySelectorAll('#ptabs .period-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  renderMain(p); renderCats(p);
+}
+
+function rankRow(p,i,esBaja){
+  const c=esBaja?'#22c55e':'#ef4444';
+  const s=p.diff_pct>0?'+':'';
+  return `<tr><td style="color:var(--muted);font-size:0.72rem">${i+1}</td><td style="font-size:0.82rem">${(p.nombre||'').substring(0,30)}</td><td style="font-size:0.72rem;color:var(--muted)">${p.categoria||''}</td><td style="color:${c};font-weight:700;font-family:'IBM Plex Mono',monospace">${s}${p.diff_pct?.toFixed(1)}%</td><td style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem">${p.precio_hoy?'$'+Number(p.precio_hoy).toLocaleString('es-AR'):'—'}</td></tr>`;
+}
+
+function mostrarRanking(k){
+  const data=RANK[k]||[];
+  const sube=data.filter(x=>x.diff_pct>0).slice(0,10);
+  const baja=[...data].filter(x=>x.diff_pct<0).sort((a,b)=>a.diff_pct-b.diff_pct).slice(0,10);
+  const noData='<tr><td colspan="5" style="color:var(--muted);text-align:center;padding:1rem">Sin datos aún</td></tr>';
+  document.getElementById('rank-sube').innerHTML=sube.length?sube.map((p,i)=>rankRow(p,i,false)).join(''):noData;
+  document.getElementById('rank-baja').innerHTML=baja.length?baja.map((p,i)=>rankRow(p,i,true)).join(''):noData;
+}
+
+function cambiarRanking(k,btn){
+  document.querySelectorAll('#rtabs .period-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  mostrarRanking(k==='dia'?'dia':k==='7d'?'d7':'mes');
+}
+
+renderMain('7d'); renderCats('7d'); mostrarRanking('dia');
+</script>
+</body></html>
