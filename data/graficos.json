@@ -1,29 +1,164 @@
 {
   "7d": {
-    "total": [],
+    "total": [
+      {
+        "fecha": "2026-03-03",
+        "pct": 0.0
+      },
+      {
+        "fecha": "2026-03-04",
+        "pct": 0.0
+      }
+    ],
     "por_categoria": {
-      "Tortas y Postres": [],
-      "Tortas Individuales": [],
-      "Pasteleria y Panaderia": [],
-      "Salados": []
+      "Tortas y Postres": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Tortas Individuales": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Pasteleria y Panaderia": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Salados": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ]
     }
   },
   "30d": {
-    "total": [],
+    "total": [
+      {
+        "fecha": "2026-03-03",
+        "pct": 0.0
+      },
+      {
+        "fecha": "2026-03-04",
+        "pct": 0.0
+      }
+    ],
     "por_categoria": {
-      "Tortas y Postres": [],
-      "Tortas Individuales": [],
-      "Pasteleria y Panaderia": [],
-      "Salados": []
+      "Tortas y Postres": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Tortas Individuales": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Pasteleria y Panaderia": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Salados": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ]
     }
   },
   "6m": {
-    "total": [],
+    "total": [
+      {
+        "fecha": "2026-03-03",
+        "pct": 0.0
+      },
+      {
+        "fecha": "2026-03-04",
+        "pct": 0.0
+      }
+    ],
     "por_categoria": {
-      "Tortas y Postres": [],
-      "Tortas Individuales": [],
-      "Pasteleria y Panaderia": [],
-      "Salados": []
+      "Tortas y Postres": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Tortas Individuales": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Pasteleria y Panaderia": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ],
+      "Salados": [
+        {
+          "fecha": "2026-03-03",
+          "pct": 0.0
+        },
+        {
+          "fecha": "2026-03-04",
+          "pct": 0.0
+        }
+      ]
     }
   }
 }
