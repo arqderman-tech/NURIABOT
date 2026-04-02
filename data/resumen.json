@@ -1,6 +1,6 @@
 {
   "variacion_dia": 0.0,
-  "variacion_mes": null,
+  "variacion_mes": 0.0,
   "total_productos": 45,
   "categorias": {
     "Tortas y Postres": {
@@ -20,5 +20,5 @@
       "variacion_dia": 0.0
     }
   },
-  "fecha_actualizacion": "2026-04-01"
+  "fecha_actualizacion": "2026-04-02"
 }
