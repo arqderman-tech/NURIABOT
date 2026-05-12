@@ -1,9 +1,39 @@
 [
   {
+    "nombre": "EMPANADAS",
+    "categoria": "Salados",
+    "diff_pct": 8.33,
+    "precio_hoy": 2.6
+  },
+  {
     "nombre": "TORTELL",
     "categoria": "Tortas y Postres",
     "diff_pct": 8.16,
     "precio_hoy": 53.0
+  },
+  {
+    "nombre": "ARROLLADO DE DULCE DE LECHE",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.69,
+    "precio_hoy": 21.0
+  },
+  {
+    "nombre": "ARROLLADO DE CHANTILLY",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.69,
+    "precio_hoy": 21.0
+  },
+  {
+    "nombre": "SÁNDWICHES DE MIGA",
+    "categoria": "Salados",
+    "diff_pct": 7.69,
+    "precio_hoy": 15.4
+  },
+  {
+    "nombre": "PASTAS",
+    "categoria": "Salados",
+    "diff_pct": 7.55,
+    "precio_hoy": 5.7
   },
   {
     "nombre": "MIL HOJAS",
@@ -12,7 +42,25 @@
     "precio_hoy": 6.0
   },
   {
-    "nombre": "TARTA BLANCA DE RICOTA",
+    "nombre": "TORTA DE MANZANAS INVERTIDA",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.14,
+    "precio_hoy": 39.0
+  },
+  {
+    "nombre": "POSTRE DE LECHE",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.14,
+    "precio_hoy": 45.0
+  },
+  {
+    "nombre": "TORTA DE NUEZ Y CHOCOLATE",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.14,
+    "precio_hoy": 45.0
+  },
+  {
+    "nombre": "COMBINADO",
     "categoria": "Tortas y Postres",
     "diff_pct": 7.14,
     "precio_hoy": 45.0
@@ -24,26 +72,8 @@
     "precio_hoy": 45.0
   },
   {
-    "nombre": "FACTURAS",
-    "categoria": "Pasteleria y Panaderia",
-    "diff_pct": 7.14,
-    "precio_hoy": 22.5
-  },
-  {
-    "nombre": "MEDIALUNAS",
-    "categoria": "Pasteleria y Panaderia",
-    "diff_pct": 7.14,
-    "precio_hoy": 22.5
-  },
-  {
-    "nombre": "COMBINADO",
+    "nombre": "TARTA BLANCA DE RICOTA",
     "categoria": "Tortas y Postres",
-    "diff_pct": 7.14,
-    "precio_hoy": 45.0
-  },
-  {
-    "nombre": "MASAS FINAS",
-    "categoria": "Pasteleria y Panaderia",
     "diff_pct": 7.14,
     "precio_hoy": 45.0
   },
@@ -52,6 +82,60 @@
     "categoria": "Pasteleria y Panaderia",
     "diff_pct": 7.14,
     "precio_hoy": 45.0
+  },
+  {
+    "nombre": "MEDIALUNAS",
+    "categoria": "Pasteleria y Panaderia",
+    "diff_pct": 7.14,
+    "precio_hoy": 22.5
+  },
+  {
+    "nombre": "MASAS FINAS",
+    "categoria": "Pasteleria y Panaderia",
+    "diff_pct": 7.14,
+    "precio_hoy": 45.0
+  },
+  {
+    "nombre": "FACTURAS",
+    "categoria": "Pasteleria y Panaderia",
+    "diff_pct": 7.14,
+    "precio_hoy": 22.5
+  },
+  {
+    "nombre": "SELVA NEGRA",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.14,
+    "precio_hoy": 45.0
+  },
+  {
+    "nombre": "FILETEADO",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.14,
+    "precio_hoy": 45.0
+  },
+  {
+    "nombre": "APPLE PIE",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.03,
+    "precio_hoy": 33.5
+  },
+  {
+    "nombre": "TIRAMISU",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.02,
+    "precio_hoy": 6.1
+  },
+  {
+    "nombre": "ROGEL",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.02,
+    "precio_hoy": 6.1
+  },
+  {
+    "nombre": "CHEESECAKE DE LIMON",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 7.02,
+    "precio_hoy": 6.1
   },
   {
     "nombre": "MACARRONES",
@@ -66,19 +150,13 @@
     "precio_hoy": 9.4
   },
   {
-    "nombre": "LEMON PIE",
-    "categoria": "Tortas Individuales",
-    "diff_pct": 6.67,
-    "precio_hoy": 6.4
-  },
-  {
-    "nombre": "GANACHE DE CHOCOLATE",
-    "categoria": "Tortas Individuales",
-    "diff_pct": 6.67,
-    "precio_hoy": 6.4
-  },
-  {
     "nombre": "TARTA DE FRUTAS DE ESTACION",
+    "categoria": "Tortas Individuales",
+    "diff_pct": 6.67,
+    "precio_hoy": 6.4
+  },
+  {
+    "nombre": "LEMON PIE",
     "categoria": "Tortas Individuales",
     "diff_pct": 6.67,
     "precio_hoy": 6.4
@@ -90,33 +168,15 @@
     "precio_hoy": 6.4
   },
   {
-    "nombre": "TARTA TOFFI",
+    "nombre": "GANACHE DE CHOCOLATE",
     "categoria": "Tortas Individuales",
     "diff_pct": 6.67,
     "precio_hoy": 6.4
   },
   {
-    "nombre": "SAINT HONORE",
-    "categoria": "Tortas y Postres",
+    "nombre": "TARTAS POR PORCIÓN",
+    "categoria": "Salados",
     "diff_pct": 6.67,
-    "precio_hoy": 48.0
-  },
-  {
-    "nombre": "TARTA BROWNIE",
-    "categoria": "Tortas y Postres",
-    "diff_pct": 6.67,
-    "precio_hoy": 48.0
-  },
-  {
-    "nombre": "FACTURAS FINAS",
-    "categoria": "Pasteleria y Panaderia",
-    "diff_pct": 6.38,
-    "precio_hoy": 25.0
-  },
-  {
-    "nombre": "ALFAJORES",
-    "categoria": "Pasteleria y Panaderia",
-    "diff_pct": 5.45,
-    "precio_hoy": 2.9
+    "precio_hoy": 6.4
   }
 ]
