@@ -1,14 +1,14 @@
 {
   "variacion_dia": 0.0,
-  "variacion_mes": 4.27,
-  "total_productos": 45,
+  "variacion_mes": 4.26,
+  "total_productos": 44,
   "categorias": {
     "Tortas y Postres": {
       "total": 27,
       "variacion_dia": 0.0
     },
     "Tortas Individuales": {
-      "total": 6,
+      "total": 5,
       "variacion_dia": 0.0
     },
     "Pasteleria y Panaderia": {
@@ -20,5 +20,5 @@
       "variacion_dia": 0.0
     }
   },
-  "fecha_actualizacion": "2026-10-27"
+  "fecha_actualizacion": "2026-10-28"
 }

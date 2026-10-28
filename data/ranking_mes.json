@@ -12,13 +12,13 @@
     "precio_hoy": 6.7
   },
   {
-    "nombre": "ROGEL",
+    "nombre": "CHEESECAKE DE LIMON",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.69,
     "precio_hoy": 6.7
   },
   {
-    "nombre": "CHEESECAKE DE LIMON",
+    "nombre": "ROGEL",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.69,
     "precio_hoy": 6.7
@@ -36,37 +36,13 @@
     "precio_hoy": 23.0
   },
   {
-    "nombre": "TARTA TOFFI",
-    "categoria": "Tortas Individuales",
-    "diff_pct": 4.48,
-    "precio_hoy": 7.0
-  },
-  {
     "nombre": "KROCCO MILK",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.48,
     "precio_hoy": 7.0
   },
   {
-    "nombre": "STRACIATELLA DULCE DE LECHE",
-    "categoria": "Tortas y Postres",
-    "diff_pct": 4.48,
-    "precio_hoy": 7.0
-  },
-  {
-    "nombre": "LEMON PIE",
-    "categoria": "Tortas Individuales",
-    "diff_pct": 4.48,
-    "precio_hoy": 7.0
-  },
-  {
     "nombre": "GANACHE DE CHOCOLATE",
-    "categoria": "Tortas Individuales",
-    "diff_pct": 4.48,
-    "precio_hoy": 7.0
-  },
-  {
-    "nombre": "POSTRE NURIA",
     "categoria": "Tortas Individuales",
     "diff_pct": 4.48,
     "precio_hoy": 7.0
@@ -78,13 +54,25 @@
     "precio_hoy": 7.0
   },
   {
+    "nombre": "LEMON PIE",
+    "categoria": "Tortas Individuales",
+    "diff_pct": 4.48,
+    "precio_hoy": 7.0
+  },
+  {
+    "nombre": "TARTA TOFFI",
+    "categoria": "Tortas Individuales",
+    "diff_pct": 4.48,
+    "precio_hoy": 7.0
+  },
+  {
     "nombre": "ORIENTE",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.48,
     "precio_hoy": 7.0
   },
   {
-    "nombre": "POSTRE TRES LECHES",
+    "nombre": "BAVAROIS DE TRES CHOCOLATES",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.48,
     "precio_hoy": 7.0
@@ -108,13 +96,13 @@
     "precio_hoy": 7.0
   },
   {
-    "nombre": "BAVAROIS DE TRES CHOCOLATES",
+    "nombre": "TARTA DE FRUTAS SECAS",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.48,
     "precio_hoy": 7.0
   },
   {
-    "nombre": "TARTA DE FRUTAS SECAS",
+    "nombre": "POSTRE TRES LECHES",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.48,
     "precio_hoy": 7.0
@@ -138,10 +126,10 @@
     "precio_hoy": 36.5
   },
   {
-    "nombre": "POSTRE DE LECHE",
-    "categoria": "Tortas y Postres",
+    "nombre": "MEDIALUNAS",
+    "categoria": "Pasteleria y Panaderia",
     "diff_pct": 4.26,
-    "precio_hoy": 49.0
+    "precio_hoy": 24.5
   },
   {
     "nombre": "SELVA NEGRA",
@@ -162,19 +150,31 @@
     "precio_hoy": 49.0
   },
   {
+    "nombre": "POSTRE DE LECHE",
+    "categoria": "Tortas y Postres",
+    "diff_pct": 4.26,
+    "precio_hoy": 49.0
+  },
+  {
     "nombre": "COMBINADO",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.26,
     "precio_hoy": 49.0
   },
   {
-    "nombre": "TORTA DE NUEZ Y CHOCOLATE",
+    "nombre": "FILETEADO",
     "categoria": "Tortas y Postres",
     "diff_pct": 4.26,
     "precio_hoy": 49.0
   },
   {
-    "nombre": "MEDIALUNAS",
+    "nombre": "MASAS FINAS",
+    "categoria": "Pasteleria y Panaderia",
+    "diff_pct": 4.26,
+    "precio_hoy": 49.0
+  },
+  {
+    "nombre": "FACTURAS",
     "categoria": "Pasteleria y Panaderia",
     "diff_pct": 4.26,
     "precio_hoy": 24.5
